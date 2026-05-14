@@ -4,7 +4,6 @@ using System.Data;
 using Microsoft.Data.Sql;
 using Microsoft.Data.SqlClient;
 
-
 namespace DatabaserHelper
 {
     /// <summary>
@@ -38,13 +37,13 @@ namespace DatabaserHelper
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddRange(parameters.ToArray());
-                    return command.ExecuteNonQuery();  // Returns the number of affected rows
+                    return command.ExecuteNonQuery(); // Returns the number of affected rows
                 }
-            }            
+            }
         }
 
         // Retrieve data from database where the retrieved data matches the provided query filters
-        public DataTable Read(string query, List<SqlParameter> ?parameters)
+        public DataTable Read(string query, List<SqlParameter>? parameters)
         {
             using (var connection = GetConnection())
             {
@@ -74,7 +73,7 @@ namespace DatabaserHelper
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddRange(parameters.ToArray());
-                    return command.ExecuteNonQuery();  // Returns the number of affected rows
+                    return command.ExecuteNonQuery(); // Returns the number of affected rows
                 }
             }
         }
@@ -88,7 +87,7 @@ namespace DatabaserHelper
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddRange(parameters.ToArray());
-                    return command.ExecuteNonQuery();  // Returns the number of affected rows
+                    return command.ExecuteNonQuery(); // Returns the number of affected rows
                 }
             }
         }
@@ -136,7 +135,7 @@ namespace DatabaserHelper
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddRange(parameters.ToArray());
-                    return await command.ExecuteNonQueryAsync();  // Returns the number of affected rows
+                    return await command.ExecuteNonQueryAsync(); // Returns the number of affected rows
                 }
             }
         }
@@ -161,7 +160,7 @@ namespace DatabaserHelper
                     using (var dataAdapter = new SqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
-                        await Task.Run(() => dataAdapter.Fill(dataTable));  // Execute the data adapter in a non-blocking manner
+                        await Task.Run(() => dataAdapter.Fill(dataTable)); // Execute the data adapter in a non-blocking manner
                         return dataTable;
                     }
                 }
@@ -182,7 +181,7 @@ namespace DatabaserHelper
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddRange(parameters.ToArray());
-                    return await command.ExecuteNonQueryAsync();  // Returns the number of affected rows
+                    return await command.ExecuteNonQueryAsync(); // Returns the number of affected rows
                 }
             }
         }
@@ -201,7 +200,7 @@ namespace DatabaserHelper
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddRange(parameters.ToArray());
-                    return await command.ExecuteNonQueryAsync();  // Returns the number of affected rows
+                    return await command.ExecuteNonQueryAsync(); // Returns the number of affected rows
                 }
             }
         }
